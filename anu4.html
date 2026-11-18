@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anu Ki Pagalpanti 😂❤️</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;
+ display:flex;align-items:center;justify-content:center;
+ padding:15px;
+ font-family:Arial,sans-serif;
+ text-align:center;
+ background:linear-gradient(135deg,#ffb5d2,#d9b9ff,#ffe1a8);
+}
+.card{
+ background:white;width:100%;max-width:420px;
+ min-height:570px;padding:25px 20px;
+ border-radius:28px;
+ box-shadow:0 15px 40px #8e437b55;
+ display:flex;flex-direction:column;
+ justify-content:center;overflow:hidden;
+}
+.page{display:none;animation:show .4s}
+.page.active{display:block}
+@keyframes show{
+ from{opacity:0;transform:scale(.85)}
+ to{opacity:1;transform:scale(1)}
+}
+h1{color:#ec438c;font-size:28px}
+p{font-size:18px;line-height:1.6;color:#68465a}
+.big{font-size:65px}
+button{
+ border:0;border-radius:30px;
+ background:#f04491;color:white;
+ padding:14px 20px;font-size:16px;
+ font-weight:bold;margin:8px;cursor:pointer;
+}
+button:active{transform:scale(.94)}
+.purple{background:#a36be8}
+.small{font-size:13px;color:#aa7c96}
+#playArea{
+ height:180px;position:relative;
+ margin-top:10px;
+}
+#runBtn{
+ position:absolute;left:28%;top:35%;
+ transition:left .12s,top .12s;
+}
+#finalBtn{display:none;background:#8e48d6}
+#musicBtn{
+ position:fixed;top:12px;right:10px;
+ z-index:10;padding:10px 14px;
+}
+.heart{
+ position:fixed;bottom:-30px;
+ animation:float 4s linear forwards;
+ pointer-events:none;
+}
+@keyframes float{
+ to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<button id="musicBtn" onclick="toggleMusic()">▶ Music 🎵</button>
+
+<div class="card">
+
+<!-- PAGE 1 -->
+<div class="page active">
+ <div class="big">🎀💗</div>
+ <h1>Heyyy Anuuu!!</h1>
+ <p>
+ Welcome madam ji! 😂<br><br>
+ Aaj aapke liye kuch special hai.<br>
+ Please end tak dekhna...<br>
+ Warna hum ro denge! 😭🤣
+ </p>
+ <button onclick="next(1)">Chalo shuru karein 😎</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+ <div class="big">🚨😂</div>
+ <h1>Important Notice!</h1>
+ <p>
+ Sarkari jaanch mein pata chala hai...<br><br>
+ Anu naam ki ek ladki aajkal bahut sad rehti hai! 😒<br><br>
+ Isliye uske upar ek naya kanoon lagu kiya jaata hai:<br>
+ Roz 5 baar smile karna compulsory! 🤣
+ </p>
+ <button onclick="next(2)">Kanoon manzoor hai 😂</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+ <div class="big">🕵️‍♀️</div>
+ <h1>CID Investigation!</h1>
+ <p>
+ Investigation mein 3 facts saamne aaye hain:<br><br>
+ 1. Anu thodi cute hai! 🥰<br>
+ 2. Thodi nakhrebaaz hai! 😏<br>
+ 3. Aur kabhi-kabhi bina wajah sad ho jaati hai! 😂<br><br>
+ Case abhi bhi chal raha hai!
+ </p>
+ <button onclick="next(3)">Next Report 🔍</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page">
+ <div class="big">🎮😂</div>
+ <h1>Smile Generator!</h1>
+ <p>Button dabao aur apni kismat dekho! 🤣</p>
+ <button class="purple" onclick="joke()">PLAY NOW 🎲</button>
+ <p id="jokeResult">Result yahan aayega 😁</p>
+ <button onclick="next(4)">Aage chalo 🤭</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page">
+ <div class="big">🤔💗</div>
+ <h1>Anu ka Mood Test!</h1>
+ <p>Aaj aapka mood kaisa hai madam?</p>
+ <button onclick="mood(0)">😡 Gussa</button>
+ <button onclick="mood(1)">😴 Neend</button>
+ <button onclick="mood(2)">🥰 Happy</button>
+ <p id="moodResult"></p>
+ <button onclick="next(5)">Last challenge 😈</button>
+</div>
+
+<!-- PAGE 6: RUNNING BUTTON -->
+<div class="page">
+ <div class="big">😈🏃‍♂️</div>
+ <h1>LAST CHALLENGE!</h1>
+ <p>
+ Is button ko click karke dikhao!<br>
+ Bahut easy hai... pakka! 😂
+ </p>
+
+ <div id="playArea">
+  <button id="runBtn" onclick="runAway()">CLICK ME 😜</button>
+ </div>
+
+ <p id="prankMsg">Pakad ke dikhao! 🤣</p>
+
+ <button id="finalBtn" onclick="next(6)">
+ Ab toh click karna hi padega 😏
+ </button>
+</div>
+
+<!-- PAGE 7: FINAL -->
+<div class="page">
+ <div class="big">🎉🤣💗</div>
+ <h1>Hahahaha Anuuu!</h1>
+ <p>
+ Tum button pakadne aayi thi...<br>
+ Aur button ne tumhe nacha diya! 😂😂<br><br>
+ Ab gussa mat hona madam!<br>
+ Thodi si masti toh banti hai! ❤️<br><br>
+ Tum hamesha khush rehna.<br>
+ Aur apna khayal rakhna. 🌹
+ </p>
+ <h1>KHIKHIKHI 🤭💕</h1>
+ <button onclick="restart()">Phir se dekho 😂</button>
+</div>
+
+<div class="small" id="count">Page 1 / 7</div>
+</div>
+
+<script>
+let current=0;
+let clicks=0;
+let audioCtx=null;
+let osc=null;
+let playing=false;
+
+const pages=document.querySelectorAll('.page');
+
+function next(n){
+ pages[current].classList.remove('active');
+ current=n;
+ pages[current].classList.add('active');
+ document.getElementById('count').innerText=
+ 'Page '+(n+1)+' / 7';
+ hearts();
+}
+
+function restart(){
+ clicks=0;
+ document.getElementById('runBtn').style.display='inline-block';
+ document.getElementById('runBtn').style.left='28%';
+ document.getElementById('runBtn').style.top='35%';
+ document.getElementById('finalBtn').style.display='none';
+ document.getElementById('prankMsg').innerText='Pakad ke dikhao! 🤣';
+ next(0);
+}
+
+function joke(){
+ const jokes=[
+ 'Aapki smile itni rare hai ki Google bhi search kar raha hai! 😂',
+ 'Anu ka nakhra level NASA se bhi upar hai! 🚀',
+ 'Breaking News: Anu ne smile ki, duniya hairaan! 🤣',
+ 'Aap cute ho, par thodi si overacting bhi karti ho! 🤭',
+ 'Aapki hasi ke liye alag se award hona chahiye! 🏆'
+ ];
+ document.getElementById('jokeResult').innerText=
+ jokes[Math.floor(Math.random()*jokes.length)];
+ hearts();
+}
+
+function mood(n){
+ const answers=[
+ 'Arey baap re! Sab log safe distance bana lo! 😂',
+ 'Madam ji, sapne mein bhi nakhre mat karna! 🤣',
+ 'Yayyy! Aaj toh duniya bach gayi! 💗'
+ ];
+ document.getElementById('moodResult').innerText=answers[n];
+}
+
+function runAway(){
+ clicks++;
+ let btn=document.getElementById('runBtn');
+
+ if(clicks<6){
+  btn.style.left=Math.random()*65+'%';
+  btn.style.top=Math.random()*65+'%';
+
+  const msg=[
+   'Arey pakdo pakdo! 😂',
+   'Oho miss ho gaya! 🤣',
+   'Itni slow? 😜',
+   'Main toh bhaagunga! 🏃',
+   'Bas bas, ab thak gaya! 😂'
+  ];
+  document.getElementById('prankMsg').innerText=msg[clicks-1];
+ }else{
+  btn.style.display='none';
+  document.getElementById('prankMsg').innerText=
+  'Hahahaha! Pakad hi nahi paayi! 🤣 Ab asli button neeche hai!';
+  document.getElementById('finalBtn').style.display='inline-block';
+ }
+ hearts();
+}
+
+function hearts(){
+ for(let i=0;i<12;i++){
+  let h=document.createElement('div');
+  h.className='heart';
+  h.innerText=['💗','💕','🌸','💖'][i%4];
+  h.style.left=Math.random()*100+'%';
+  h.style.fontSize=(20+Math.random()*20)+'px';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),4000);
+ }
+}
+
+function toggleMusic(){
+ if(!audioCtx){
+  audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+ }
+ if(audioCtx.state==='suspended')audioCtx.resume();
+
+ if(!playing){
+  osc=audioCtx.createOscillator();
+  let gain=audioCtx.createGain();
+  osc.type='sine';
+  osc.frequency.value=523.25;
+  gain.gain.value=.035;
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start();
+  playing=true;
+  document.getElementById('musicBtn').innerText='⏸ Pause Music';
+ }else{
+  osc.stop();
+  osc=null;
+  playing=false;
+  document.getElementById('musicBtn').innerText='▶ Music 🎵';
+ }
+}
+</script>
+</body>
+</html>
